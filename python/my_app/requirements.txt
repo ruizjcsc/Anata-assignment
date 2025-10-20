@@ -1,0 +1,10 @@
+bcrypt==5.0.0
+cffi==2.0.0
+cryptography==46.0.3
+invoke==2.2.1
+paramiko==4.0.0
+pycparser==2.23
+PyNaCl==1.6.0
+PyQt6==6.9.1
+PyQt6-Qt6==6.9.2
+PyQt6_sip==13.10.2
