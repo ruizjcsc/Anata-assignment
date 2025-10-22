@@ -33,6 +33,7 @@ class MainWindow(QMainWindow):
         # TITLE LABEL
         self.label = QLabel("Drag Image Here",self)
         self.label.setFont(QFont("Arial",40))
+        self.label.setFixedSize(700, 500)
         # uses css type style sheet
         self.label.setStyleSheet("border: 4px dashed white;")
         # sets alignment 
@@ -54,8 +55,6 @@ class MainWindow(QMainWindow):
         vBox.addWidget(self.label)
         vBox.addWidget(self.button_u)
         vBox.addWidget(self.button_d)
-        # grid.addWidget(imageLabel,2,0)
-
 
         central_widget.setLayout(vBox)
 
@@ -67,6 +66,7 @@ class MainWindow(QMainWindow):
         if event.mimeData().hasUrls():
             pixmap = QPixmap(event.mimeData().urls()[0].toLocalFile())
             self.label.setPixmap(pixmap)
+            self.label.setScaledContents(True)
             self.local_images.append(event.mimeData().urls()[0].toLocalFile())
             print(self.local_images)
             event.acceptProposedAction()
